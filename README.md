@@ -13,7 +13,7 @@ npm start        # serves on http://localhost:5173
 npm test         # URL normalization + status rule tests
 ```
 
-Deploy by uploading the folder to any static HTTPS host (GitHub Pages, Netlify, Cloudflare Pages). All paths are relative, so a sub-path works.
+Production: GitHub Pages from `main`, folder `/ (root)`, served at https://mcroney531-ctrl.github.io/track-applications/. Every path (assets, manifest, service worker, share target) is relative, so the app works under that sub-path with no config.
 
 ## Structure
 
@@ -29,8 +29,7 @@ Deploy by uploading the folder to any static HTTPS host (GitHub Pages, Netlify, 
 
 ## Sharing into the app
 
-- **Android (Chrome/Edge):** install the app, then Share → Jobs. The manifest uses a GET share target, so a share opens `./?url=…&text=…&title=…`. The app extracts the link, saves it, and opens the inline editor.
-- **iOS:** Safari does not support Web Share Target. Workaround: create a Shortcut that accepts URLs from the Share Sheet and runs **Open URL** with `https://<your-host>/?url=[Shortcut Input]`. It uses the same code path.
+- **Android (Chrome/Edge):** install the app, then Share → Jobs. The manifest uses a GET share target, so a share opens `./?url=…&text=…&title=…` (in production, `/track-applications/?url=…`). The app extracts the link, saves it, and opens the inline editor.
 - **Desktop:** paste. Multiple links (one per line) work.
 
 ## Data

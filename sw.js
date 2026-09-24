@@ -1,5 +1,5 @@
 // App-shell cache. Bump VERSION when shipping changes so clients pick them up.
-const VERSION = 'v1';
+const VERSION = 'v2';
 const CACHE = `job-tracker-${VERSION}`;
 const SHELL = [
   './',
